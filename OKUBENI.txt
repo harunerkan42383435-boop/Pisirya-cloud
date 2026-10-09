@@ -1,0 +1,47 @@
+PİŞİRYA — Bugün ne pişirsem?
+4 Ekim 2026 · V4 · iPhone web uygulaması (PWA)
+
+V4'TE NELER YENİ?
+- 300 tarif (216 + 84 yeni): çorbalar, ev yemekleri, hamur işleri, makarna, salata, deniz ürünleri, dünya mutfağı ve tatlılar.
+  Yeni tariflerin hepsinde kesin miktar, süre dağılımı, ayrıntılı adımlar ve ipucu var.
+- 100 kiler ürünü (84 + 16 yeni): toz kırmızı biber, soya sosu, zencefil, zerdeçal, tarçın, ketçap, defne yaprağı, sirke, tahin,
+  sumak, susam, avokado, fesleğen, karides, tortilla, beyaz peynir. Baharat ve soslar için yeni "Baharat & Sos" grubu eklendi.
+- Kiler listesi alfabetik (A→Z) ve kategori görünümünde; sıralama seçili dile göre yapılır.
+- Diller: Türkçe, İngilizce, POLONYACA ve İSPANYOLCA. Arayüz, tarif adları, kiler ürünleri, kategoriler ve gün adları çevrildi.
+  Tarif ADIMLARI Türkçe kalır (aşağıya bakın).
+- GÖRSELLER: Üçüncü taraf fotoğraflar tamamen kaldırıldı. 300 tarifin tamamı için bu projede kodla üretilmiş özgün illüstrasyon
+  kullanılır (img/ klasörleri, pakete gömülü, çevrimdışı çalışır). İnternetten görsel yüklenmez.
+- Açık tema artık krem/kırık beyaz (koyu tema değişmedi).
+
+MEVCUT SİTENİZİ GÜNCELLEME (GitHub Pages web arayüzü)
+1. ZIP'i açın. İçinde: index.html, app.js, data.js, pantry.js, i18n.js, style.css, sw.js, manifest.webmanifest, credits.html,
+   favicon.png, _headers, icons/, assets/, img/ ve tools/ bulunur.
+2. GitHub web arayüzü bir seferde EN FAZLA 100 dosya yükler. Bu yüzden görseller dört klasöre bölündü
+   (img/a: 69, img/b: 72, img/c: 84, img/d: 75 dosya). Beş ayrı yükleme yapın; her yüklemeden sonra "Commit changes" deyin:
+     (1) Ana dosyalar (index.html, app.js, data.js, pantry.js, i18n.js, style.css, sw.js, manifest.webmanifest, credits.html,
+         favicon.png, _headers) + icons klasörü + assets klasörü
+     (2) img/a   (3) img/b   (4) img/c   (5) img/d      — her seferinde ilgili klasörün KENDİSİNİ sürükleyin.
+   Aynı adlı dosyaların üzerine yazılır. tools/ klasörünü yüklemeniz gerekmez.
+3. Sitenizde artık kullanılmayan eski dosyalar olabilir; zararsızdır. Eski V3 fotoğraf önbelleği ilk açılışta otomatik silinir.
+4. iPhone'da Safari ile aynı adresi açın. Eski sürüm görünürse uygulamayı ve açık Safari sekmelerini kapatıp yeniden açın.
+   Tarayıcı verilerini SİLMEYİN: favoriler ve kileriniz silinir.
+5. İlk açılışı internet açıkken yapın (önbellek hazırlanır; ~3 MB). Sonra uçak modunda deneyin.
+
+KAYITLARINIZ
+Favoriler, kiler, plan ve alışveriş listesi cihazda saklanır ve V3'ten otomatik devam eder. Ayarlar → Yedeği indir ile JSON
+yedeği alabilirsiniz. Hesap veya bulut eşitleme yoktur.
+
+DİL NOTLARI
+- Lehçe ve İspanyolca çeviriler yapay zekâ ile hazırlandı; anadili konuşan biri tarafından gözden geçirilmelidir.
+- Tarif ADIMLARI yalnızca Türkçedir. Tarif sayfasındaki malzeme adları, kiler ürünüyle eşleşiyorsa seçili dilde, eşleşmiyorsa
+  Türkçe görünür. Adımları çevirmek ayrı ve büyük bir iştir.
+
+GÖRSELLER HAKKINDA
+- Görseller illüstrasyondur; gerçek yemeğin fotoğrafı değildir ve kartta "İllüstrasyon" etiketi taşır. Tarifin türünü ve ana
+  malzemelerini temsil eder; bazı benzer yemekler benzer çizim şablonunu kullanır.
+- Üretim: tools/illustrate.py (şablonlar), tools/generate_images.py (toplu üretim). Üçüncü taraf lisansı gerekmez.
+- Logo yapay zekâ ile üretilmiştir (assets/pisirya-logo-original.png). Ayrıntı: credits.html, IMAGE_CREDITS.md.
+
+TEKNİK
+Derleme veya npm kurulumu gerekmez; statik dosyalardır. HTTPS gerekir (dosya:// adresinde PWA kurulumu ve servis çalışanı çalışmaz).
+Veri yeniden üretimi: tools/build_v4.py (Python 3 + Node.js). Tarif dosyalarını değiştirince sw.js içindeki VERSION değerini artırın.

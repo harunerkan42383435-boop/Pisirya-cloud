@@ -1,0 +1,55 @@
+PİŞİRYA — DOĞRULAMA NOTLARI
+4 Ekim 2026 · V4
+
+SAHTE TARAYICI ORTAMINDA ÇALIŞAN KONTROLLER (37 geçti, 0 hata)
+Komut: node tools/test_v4.js
+
+✓ 300 tarif
+✓ 100 kiler ürünü
+✓ tarif adı tekrarı yok
+✓ tüm tariflerde görsel
+✓ 300 tarifin tamamı yerel illüstrasyon kullanıyor
+✓ 300 illüstrasyon dosyası mevcut ve geçerli WebP
+✓ hiçbir tarifte harici (http) görsel yok
+✓ üçüncü taraf fotoğraf listesi boş
+✓ tüm görsel kredileri "illüstrasyon"
+✓ her görsel klasörü 100 dosyanın altında (GitHub web yükleme sınırı): {"d":75,"a":69,"c":84,"b":72}
+✓ kod ve veri dosyalarında harici görsel sunucusu referansı yok
+✓ süre = hazırlık+pişirme+bekleme
+✓ tüm miktarlar pozitif
+✓ Lehçe ve İspanyolca tarif adı (300)
+✓ kiler: tüm ürünlerde pl/es/en çeviri
+✓ tüm tarif malzemeleri katalogda
+✓ Akdeniz etiketli tarif: 74 (filtre ile aynı sayıda)
+✓ sw.js önbellek listesindeki tüm dosyalar var
+✓ arayüz metinleri çevrildi (pl 171/171, es 171/171)
+✓ grup ve mutfak etiketleri 4 dilde
+✓ [tr] 9 sayfa hatasız (undefined/NaN yok)
+✓ [en] 9 sayfa hatasız (undefined/NaN yok)
+✓ [pl] 9 sayfa hatasız (undefined/NaN yok)
+✓ [es] 9 sayfa hatasız (undefined/NaN yok)
+✓ [tr] kiler A→Z: 100 ürün, 24 harf (ABCÇDEFG…)
+✓ [en] kiler A→Z: 100 ürün, 20 harf (ABCDEFGH…)
+✓ [pl] kiler A→Z: 100 ürün, 19 harf (ABCFGIJK…)
+✓ [es] kiler A→Z: 100 ürün, 20 harf (ABCEFGHJ…)
+✓ kiler kategori görünümü: 7 grup
+✓ Guacamole: "avokado" artık kilerden eşleşiyor (önceden eksikti)
+✓ Enchilada: tortilla + toz kırmızı biber ile hazır
+✓ takma ad: "pirinç sirkesi" → sirke
+✓ Düğün Çorbası: 6 kişilik, 300 g kuzu
+✓ porsiyon ölçekleme (6→3 kişi: 150 g)
+✓ uzun ıslatma süresi toplam süreye dahil edilmemiş + not
+✓ yedek içe aktarma: es dili korunur, geçersiz ürün atılır
+✓ geçersiz dil → tr
+
+BU KONTROLLERİN SINIRI
+Bunlar Node.js içinde sahte bir tarayıcı ortamında çalışan mantık/şablon testleridir; gerçek tarayıcı motoru değildir. Gerçek DOM yerleşimi,
+piksel görünümü, krem rengin ekranda nasıl göründüğü, iPhone Safari kurulumu, çevrimdışı açılış, ses/ekran uyanık tutma bu ortamda
+DOĞRULANMADI. İllüstrasyonlar üretim sırasında örnek sayfalar üzerinden gözle kontrol edildi.
+
+İPHONE'UNUZDA SON KONTROL
+- Ayarlar'dan dili Polski ve Español yapınca menüler, tarif adları ve kiler ürünleri çevriliyor mu?
+- Kilerde A→Z görünümünde harf başlıkları seçili dile göre doğru sıralanıyor mu?
+- Yeni 16 ürün (ör. avokado, tortilla, zencefil) seçilince ilgili tarifler "hazır" grubuna geçiyor mu?
+- Tüm kartlarda illüstrasyon görünüyor mu? "İllüstrasyon" etiketi okunaklı mı? Krem tema gözünüzü yormuyor mu?
+- Uçak modunda tarif listesi, bir tarif ve illüstrasyonlar açılıyor mu?
